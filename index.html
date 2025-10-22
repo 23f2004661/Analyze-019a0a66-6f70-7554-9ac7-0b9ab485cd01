@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .data-section, .results-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background-color: #fdfdfd;
+        }
+        .data-input {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .data-input label {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .data-input input[type="file"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 1px solid #ced4da;
+        }
+        .result-item {
+            margin-bottom: 10px;
+        }
+        .result-key {
+            font-weight: bold;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Analysis Application</h1>
+
+        <div class="data-section">
+            <h2>Upload Data</h2>
+            <p>Please upload the <code>data.csv</code> file. If you only have <code>data.xlsx</code>, you can convert it using a tool like <a href="https://www.convertcsv.com/excel-to-csv.htm" target="_blank">ConvertCSV</a>.</p>
+            <div class="data-input">
+                <label for="fileInput">Select CSV file:</label>
+                <input type="file" id="fileInput" accept=".csv">
+                <button id="loadDataBtn">Load Data</button>
+            </div>
+            <div id="loadingMessage" style="display: none; color: #888;">Loading data...</div>
+        </div>
+
+        <div class="results-section">
+            <h2>Analysis Results</h2>
+            <button id="analyzeBtn" disabled>Analyze Data</button>
+            <div id="results">
+                <p>Upload and load a CSV file to enable analysis.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
